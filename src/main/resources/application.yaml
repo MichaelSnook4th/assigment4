@@ -1,0 +1,28 @@
+## Server
+server:
+  port: 8080
+
+## MySQL
+spring:
+  datasource:
+    url: jdbc:mysql://0.0.0.0:3306/ums?serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: passw
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Ov23liO2sGzshtBtB9W9
+            clientSecret: a834ec9c255aade579b8957a4a3d075668e8a792
+            redirectUri: "http://localhost:8080/login/oauth2/code/github"
+            scope:
+              - read:user
+              - user:email
+        provider:
+          github:
+            authorizationUri: https://github.com/login/oauth/authorize
+            tokenUri: https://github.com/login/oauth/access_token
+            userInfoUri: https://api.github.com/user
+            userNameAttribute: id
+
