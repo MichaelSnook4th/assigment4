@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Welcome, <span th:text="${session.name}">Guest</span>!</h1>
+<p>Email: <span th:text="${session.email}">Not Provided</span></p>
+<p>Your Token: <span th:text="${session.jwt}"></span></p>
+</body>
+</html>

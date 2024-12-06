@@ -31,12 +31,13 @@ public class Constants {
             + TABLE_USERS + ".`last_visit_id` = " + TABLE_LAST_VISIT + ".`id` WHERE " + TABLE_USERS
             + ".`id`=UUID_TO_BIN(?);";
     public static final String CREATE_USER = "INSERT INTO " + TABLE_USERS
-            + " (`id`, `name`, `email`, `password`, `created`, `last_visit_id`) VALUES "
-            + "(UUID_TO_BIN(?), ?, ?, ?, ?, UUID_TO_BIN(?));";
+            + " (`id`, `name`, `email`, `created`, `last_visit_id`, `github_id`) VALUES "
+            + "(UUID_TO_BIN(?), ?, ?, ?, UUID_TO_BIN(?), ?);";
     public static final String ASSIGN_ROLE = "INSERT INTO " + TABLE_USERS_ROLES
             + " (`users_id`, `roles_id`) VALUES (UUID_TO_BIN(?), UUID_TO_BIN(?));";
     public static final String CREATE_LOGIN = "INSERT INTO " + TABLE_LAST_VISIT + " VALUES " + "(UUID_TO_BIN(?),?,?);";
     public static final String GET_ALL_ROLES = "SELECT * FROM " + TABLE_ROLES;
     public static final String DELETE_USER = "DELETE FROM " + TABLE_USERS + " WHERE `id` = (UUID_TO_BIN(?));";
     public static final String DELETE_LAST_VISIT = "DELETE FROM " + TABLE_LAST_VISIT + " WHERE `id` = (UUID_TO_BIN(?));";
+    public static final String GET_USER_BY_EMAIL = "SELECT * FROM " + TABLE_USERS + " WHERE " + TABLE_USERS + ".`email` = ?;";
 }

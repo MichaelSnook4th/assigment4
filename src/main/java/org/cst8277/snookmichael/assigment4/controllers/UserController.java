@@ -84,7 +84,7 @@ public class UserController {
         } else {
             response.put(Constants.CODE, "200");
             response.put(Constants.MESSAGE, "User deleted");
-            response.put(Constants.DATA, userId.toString());
+            response.put(Constants.DATA, userId);
         }
         return Mono.just(ResponseEntity.ok().header(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON)
                 .header(Constants.ACCEPT, Constants.APPLICATION_JSON).body(response));

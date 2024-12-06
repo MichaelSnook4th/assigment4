@@ -13,4 +13,8 @@ public class Roles {
     UUID roleId;
     String role;
     String description;
+
+    public Object getRoleName() {
+        return null;
+    }
 }
